@@ -41,11 +41,12 @@ def exibe_conjuntos(lista_elementos):
           f'{Cores.bold}{Cores.header} elemento(s) digitados: {Cores.endColor}{Cores.endColor}'
           f' {Cores.cyan}{lista_elementos}{Cores.endColor}')
     print('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
-    print(f'{Cores.header}Total de conjuntos possíveis:{Cores.endColor} {Cores.cyan}{2 ** len(lista_elementos)}{Cores.endColor}')
+    print(
+        f'{Cores.header}Total de conjuntos possíveis:{Cores.endColor} {Cores.cyan}{2 ** len(lista_elementos)}{Cores.endColor}')
     print('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
     print('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
     # Imprime todos os conjuntos do menor para o maior.
-    for numero in range(len(lista_elementos)+1):
+    for numero in range(len(lista_elementos) + 1):
         lista_subconjuntos = sorted(subconjuntos_por_tamanho(conjuntos_possiveis(lista_elementos), numero))
         print(f'{Cores.red}{len(lista_subconjuntos)}{Cores.endColor} Conjunto de {Cores.cyan}{numero}{Cores.endColor}'
               f' elemento(s): {Cores.cyan}{lista_subconjuntos}{Cores.endColor}')
