@@ -33,18 +33,19 @@ def subconjuntos_por_tamanho(lista_conjuntos, numero):
     return lista_subconjuntos
 
 
-def exibe_conjuntos(lista_elementos, tamanho_conjunto):
+# Imprime na tela os conjuntos separados por tamanho de partes
+def exibe_conjuntos(lista_elementos):
     print('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
     print('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
-    print(f'{Cores.bold}{Cores.header}Conjunto de {Cores.cyan}{tamanho_conjunto}{Cores.endColor}'
+    print(f'{Cores.bold}{Cores.header}Conjunto de {Cores.cyan}{len(lista_elementos)}{Cores.endColor}'
           f'{Cores.bold}{Cores.header} elemento(s) digitados: {Cores.endColor}{Cores.endColor}'
           f' {Cores.cyan}{lista_elementos}{Cores.endColor}')
     print('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
-    print(f'{Cores.header}Total de conjuntos possíveis:{Cores.endColor} {Cores.cyan}{tamanho_conjunto ** 2}{Cores.endColor}')
+    print(f'{Cores.header}Total de conjuntos possíveis:{Cores.endColor} {Cores.cyan}{2 ** len(lista_elementos)}{Cores.endColor}')
     print('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
     print('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
     # Imprime todos os conjuntos do menor para o maior.
-    for numero in range(tamanho_conjunto+1):
+    for numero in range(len(lista_elementos)+1):
         lista_subconjuntos = sorted(subconjuntos_por_tamanho(conjuntos_possiveis(lista_elementos), numero))
         print(f'{Cores.red}{len(lista_subconjuntos)}{Cores.endColor} Conjunto de {Cores.cyan}{numero}{Cores.endColor}'
               f' elemento(s): {Cores.cyan}{lista_subconjuntos}{Cores.endColor}')
@@ -66,12 +67,12 @@ def dados_entrada():
         tamanho_conjunto += 1
         lista_elementos.append(input(f'Digite o {Cores.red}{tamanho_conjunto}º{Cores.endColor} elemento do conjunto: '))
         resposta = input(f'Deseja continuar adicionando elementos? {Cores.red}(Ss/Nn){Cores.endColor}: ')
-    return lista_elementos, tamanho_conjunto
+    lista_elementos = list(set(lista_elementos))
+    return sorted(lista_elementos)
 
 
 if __name__ == '__main__':
     try:
-        lista_elementos, tamanho_conjunto = dados_entrada()
-        exibe_conjuntos(lista_elementos, tamanho_conjunto)
+        exibe_conjuntos(dados_entrada())
     except:
         print('Erro ao calcular partes do conjunto!')
