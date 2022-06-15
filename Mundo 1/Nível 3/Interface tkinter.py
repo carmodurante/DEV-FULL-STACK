@@ -17,7 +17,7 @@ logo = Label(principal, image=imagem)
 logo.image = imagem
 logo.grid(row=0, column=0, rowspan=2)  # Ocupa 2 linhas
 
-# Etiqueta e caixa de entrada da Altura
+# Etiqueta e caixa de entrada da Altura.
 etiqueta_altura = Label(principal, text='Altura: ')
 etiqueta_altura.grid(row=0, column=1)
 
