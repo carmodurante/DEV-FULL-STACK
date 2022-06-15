@@ -9,7 +9,6 @@ def acao():
     msg = messagebox.showinfo("Classificação IMC: ", classificacao)
 
 
-
 principal = tkinter.Tk()
 
 # Logo
