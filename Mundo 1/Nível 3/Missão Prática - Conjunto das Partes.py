@@ -42,7 +42,8 @@ def exibe_conjuntos(lista_elementos):
           f' {Cores.cyan}{lista_elementos}{Cores.endColor}')
     print('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
     print(
-        f'{Cores.header}Total de conjuntos possíveis:{Cores.endColor} {Cores.cyan}{2 ** len(lista_elementos)}{Cores.endColor}')
+        f'{Cores.header}Total de conjuntos possíveis:{Cores.endColor} {Cores.cyan}'
+        f'{2 ** len(lista_elementos)}{Cores.endColor}')
     print('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
     print('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
     # Imprime todos os conjuntos do menor para o maior.
