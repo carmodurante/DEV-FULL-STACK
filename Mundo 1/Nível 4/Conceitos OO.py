@@ -1,3 +1,12 @@
+import math
+
+
+class Math:
+    @staticmethod
+    def sqrt(x):
+        return math.sqrt(x)
+
+
 class Conta:
     # Atributos privados __
     def __init__(self, numero, saldo):
