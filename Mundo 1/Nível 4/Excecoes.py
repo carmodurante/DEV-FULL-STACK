@@ -11,4 +11,4 @@ class ExcecaoCustomizada(exception):
 try:
     ExcecaoCustomizada.throws()
 except ExcecaoCustomizada as ex:
-    print("Excecao lançada")
+    print("Excecao lançada!")
