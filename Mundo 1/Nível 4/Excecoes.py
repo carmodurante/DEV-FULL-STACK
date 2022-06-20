@@ -9,6 +9,7 @@ class ExcecaoCustomizada(exception):
 
 
 try:
-    ExcecaoCustomizada.throws()
+    exception = ExcecaoCustomizada()
+    ExcecaoCustomizada.throws(self=exception)
 except ExcecaoCustomizada as ex:
     print("Excecao lançada!")
