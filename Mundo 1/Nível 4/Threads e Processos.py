@@ -1,4 +1,3 @@
-# script principal.py
 from threading import Thread
 from multiprocessing import Process
 
