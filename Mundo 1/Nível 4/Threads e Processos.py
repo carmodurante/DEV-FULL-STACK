@@ -1,6 +1,8 @@
 from threading import Thread
 from multiprocessing import Process
 
+""" todas as threads estão no mesmo contexto, com acesso às mesmas variáveis, enquanto o processo não. """
+
 
 def funcao_a(nome):
     print(nome)
