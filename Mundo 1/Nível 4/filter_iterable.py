@@ -13,3 +13,4 @@ def impares(iterable):
 def main():
     nova_lista = impares(lista)
     print(nova_lista)
+
