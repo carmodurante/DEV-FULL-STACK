@@ -1,4 +1,3 @@
-# script funcao_filter.py
 lista = [1, 2, 3, 4, 5]
 
 

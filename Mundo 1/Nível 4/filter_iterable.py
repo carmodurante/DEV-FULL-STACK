@@ -1,4 +1,3 @@
-# script funcao_filtro_iterable.py
 lista = [1, 2, 3, 4, 5]
 
 
