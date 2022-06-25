@@ -1,7 +1,9 @@
-import PySimpleGUI as sg
 import sys
 from datetime import datetime
 from datetime import timedelta
+
+import PySimpleGUI as sg
+
 """
     Desktop Widget - Display the date
     Simple display of the date in the format of:
@@ -88,24 +90,30 @@ def make_window(location, test_window=False):
     else:
         title_element = sg.pin(sg.Text(title, size=(20, 1), font=title_font, justification='c', k='-TITLE-'))
         right_click_menu = [[''],
-                            ['Choose Title', 'Edit Me', 'New Theme', 'Save Location', 'Font', 'Refresh', 'Set Refresh Rate', 'Show Refresh Info', 'Hide Refresh Info',
+                            ['Choose Title', 'Edit Me', 'New Theme', 'Save Location', 'Font', 'Refresh',
+                             'Set Refresh Rate', 'Show Refresh Info', 'Hide Refresh Info',
                              'Alpha', [str(x) for x in range(1, 11)], 'Exit', ]]
 
-
     layout = [[title_element],
-              [sg.Text(initial_text, size=(len(initial_text)+2, 1), font=main_info_font, k='-MAIN INFO-', justification='c', enable_events=test_window)],
+              [sg.Text(initial_text, size=(len(initial_text) + 2, 1), font=main_info_font, k='-MAIN INFO-',
+                       justification='c', enable_events=test_window)],
               [sg.pin(
-                  sg.Text(size=(15, 2), font=refresh_font, k='-REFRESHED-', justification='c', visible=sg.user_settings_get_entry('-show refresh-', True)))]]
+                  sg.Text(size=(15, 2), font=refresh_font, k='-REFRESHED-', justification='c',
+                          visible=sg.user_settings_get_entry('-show refresh-', True)))]]
 
     # ------------------- Window Creation -------------------
     try:
-        window = sg.Window('Desktop Widget Template', layout, location=location, no_titlebar=True, grab_anywhere=True, margins=(0, 0), element_justification='c', element_padding=(0, 0), alpha_channel=sg.user_settings_get_entry('-alpha-', ALPHA), finalize=True, right_click_menu=right_click_menu, right_click_menu_tearoff=False)
+        window = sg.Window('Desktop Widget Template', layout, location=location, no_titlebar=True, grab_anywhere=True,
+                           margins=(0, 0), element_justification='c', element_padding=(0, 0),
+                           alpha_channel=sg.user_settings_get_entry('-alpha-', ALPHA), finalize=True,
+                           right_click_menu=right_click_menu, right_click_menu_tearoff=False)
     except Exception as e:
         if sg.popup_yes_no('Error creating the window', e, 'Do you want to delete your settings file to fix?') == 'Yes':
             sg.user_settings_delete_filename()
             sg.popup('Settings file deleted.  Please restart your program.')
             exit()
     return window
+
 
 def get_date_string():
     dtime_here = datetime.utcnow() + timedelta(hours=-5)
@@ -134,7 +142,7 @@ def main(location):
         if sg.user_settings_get_entry('-title-', 'None') in ('None', 'Hide'):
             window['-TITLE-'].update(visible=False)
         else:
-            window['-TITLE-'].update(sg.user_settings_get_entry('-title-', 'None'),visible=True)
+            window['-TITLE-'].update(sg.user_settings_get_entry('-title-', 'None'), visible=True)
         window['-REFRESHED-'].update(datetime.now().strftime("%m/%d/%Y\n%I:%M:%S %p"))
 
         # -------------- Start of normal event loop --------------
@@ -145,7 +153,9 @@ def main(location):
         if event == 'Edit Me':
             sg.execute_editor(__file__)
         elif event == 'Choose Title':
-            new_title = sg.popup_get_text('Choose a title for your Widget\nEnter None if you do not want anything displayed', location=window.current_location())
+            new_title = sg.popup_get_text(
+                'Choose a title for your Widget\nEnter None if you do not want anything displayed',
+                location=window.current_location())
             if new_title is not None:
                 if new_title in ('None', 'Hide'):
                     window['-TITLE-'].update(visible=False)
@@ -166,21 +176,25 @@ def main(location):
             sg.user_settings_set_entry('-alpha-', int(event) / 10)
         elif event == 'Set Refresh Rate':
             choice = sg.popup_get_text('How frequently to update window in seconds? (can be a float)',
-                                       default_text=sg.user_settings_get_entry('-fresh frequency-', UPDATE_FREQUENCY_MILLISECONDS) / 1000,
+                                       default_text=sg.user_settings_get_entry('-fresh frequency-',
+                                                                               UPDATE_FREQUENCY_MILLISECONDS) / 1000,
                                        location=window.current_location())
             if choice is not None:
                 try:
                     refresh_frequency = float(choice) * 1000  # convert to milliseconds
                     sg.user_settings_set_entry('-fresh frequency-', float(refresh_frequency))
                 except Exception as e:
-                    sg.popup_error(f'You entered an incorrect number of seconds: {choice}', f'Error: {e}', location=window.current_location())
+                    sg.popup_error(f'You entered an incorrect number of seconds: {choice}', f'Error: {e}',
+                                   location=window.current_location())
         elif event == 'New Theme':
             loc = window.current_location()
             if choose_theme(window.current_location(), window.size) is not None:
                 window.close()  # out with the old...
                 window = make_window(loc)  # in with the new
         elif event == 'Font':
-            font = sg.popup_get_text('Enter font string using Interfaces Gui font format (e.g. courier 70 or courier 70 bold)', default_text=sg.user_settings_get_entry('-main info font-'), keep_on_top=True)
+            font = sg.popup_get_text(
+                'Enter font string using Interfaces Gui font format (e.g. courier 70 or courier 70 bold)',
+                default_text=sg.user_settings_get_entry('-main info font-'), keep_on_top=True)
             if font:
                 sg.user_settings_set_entry('-main info font-', font)
                 loc = window.current_location()
