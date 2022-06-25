@@ -5,7 +5,7 @@ import PySimpleGUI as sg
 
     All 34 elements shown in 1 window as simply as possible.
 
-    Copyright 2022 PySimpleGUI
+    Copyright 2022 Interfaces Gui
 """
 
 use_custom_titlebar = False
@@ -60,10 +60,10 @@ def make_window(theme=None):
 
     layout = [[sg.MenubarCustom([['File', ['Exit']], ['Edit', ['Edit Me', ]]],  k='-CUST MENUBAR-',p=0)] if use_custom_titlebar else [sg.Menu([['File', ['Exit']], ['Edit', ['Edit Me', ]]],  k='-CUST MENUBAR-',p=0)],
               [sg.Checkbox('Use Custom Titlebar & Menubar', use_custom_titlebar, enable_events=True, k='-USE CUSTOM TITLEBAR-')],
-              [sg.T('PySimpleGUI Elements - Use Combo to Change Themes', font='_ 18', justification='c', expand_x=True)],
+              [sg.T('Interfaces Gui Elements - Use Combo to Change Themes', font='_ 18', justification='c', expand_x=True)],
               [sg.Col(layout_l), sg.Col(layout_r)]]
 
-    window = sg.Window('The PySimpleGUI Element List', layout, finalize=True, right_click_menu=sg.MENU_RIGHT_CLICK_EDITME_VER_EXIT, keep_on_top=True, use_custom_titlebar=use_custom_titlebar)
+    window = sg.Window('The Interfaces Gui Element List', layout, finalize=True, right_click_menu=sg.MENU_RIGHT_CLICK_EDITME_VER_EXIT, keep_on_top=True, use_custom_titlebar=use_custom_titlebar)
 
     window['-PBAR-'].update(30)                                                     # Show 30% complete on ProgressBar
     window['-GRAPH-'].draw_image(data=sg.EMOJI_BASE64_HAPPY_JOY, location=(0,50))   # Draw something in the Graph Element

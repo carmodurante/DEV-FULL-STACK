@@ -6,12 +6,12 @@ import PySimpleGUI as sg
     This Demo Program looks similar to the one based on the Column Element.
     This version has a big difference in how it was implemented and the fact that it can be resized.
 
-    It's a good example of how PySimpleGUI evolves, continuously.  When the original Column-based demo
+    It's a good example of how Interfaces Gui evolves, continuously.  When the original Column-based demo
         was written, none of these techniques such as expansion, were easily programmed.
 
     Dashboard using blocks of information.
 
-    Copyright 2021 PySimpleGUI.org
+    Copyright 2021 Interfaces Gui.org
 """
 
 
@@ -69,7 +69,7 @@ layout = [
                     pad=BPAD_LEFT, background_color=BORDER_COLOR, border_width=0, expand_x=True, expand_y=True),
            sg.Column(block_4, size=(450, 320), pad=BPAD_RIGHT,  expand_x=True, expand_y=True, grab=True),],[sg.Sizegrip(background_color=BORDER_COLOR)]]
 
-window = sg.Window('Dashboard PySimpleGUI-Style', layout, margins=(0,0), background_color=BORDER_COLOR, no_titlebar=True, resizable=True, right_click_menu=sg.MENU_RIGHT_CLICK_EDITME_VER_LOC_EXIT)
+window = sg.Window('Dashboard Interfaces Gui-Style', layout, margins=(0,0), background_color=BORDER_COLOR, no_titlebar=True, resizable=True, right_click_menu=sg.MENU_RIGHT_CLICK_EDITME_VER_LOC_EXIT)
 
 while True:             # Event Loop
     event, values = window.read()

@@ -9,7 +9,7 @@ from datetime import timedelta
 
     You can change the format by modifying the function get_date_string
 
-    Copyright 2021 PySimpleGUI
+    Copyright 2021 Interfaces Gui
 """
 
 ALPHA = 0.9  # Initial alpha until user changes
@@ -180,7 +180,7 @@ def main(location):
                 window.close()  # out with the old...
                 window = make_window(loc)  # in with the new
         elif event == 'Font':
-            font = sg.popup_get_text('Enter font string using PySimpleGUI font format (e.g. courier 70 or courier 70 bold)', default_text=sg.user_settings_get_entry('-main info font-'), keep_on_top=True)
+            font = sg.popup_get_text('Enter font string using Interfaces Gui font format (e.g. courier 70 or courier 70 bold)', default_text=sg.user_settings_get_entry('-main info font-'), keep_on_top=True)
             if font:
                 sg.user_settings_set_entry('-main info font-', font)
                 loc = window.current_location()

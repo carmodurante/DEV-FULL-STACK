@@ -5,11 +5,11 @@ import PySimpleGUI as sg
     Demo Font Previewer
 
     Gets a list of the installed fonts according to tkinter.
-    Requires PySimpleGUI version 4.57.0 and newer (that's when sg.Text.fonts_installed_list was added)
+    Requires Interfaces Gui version 4.57.0 and newer (that's when sg.Text.fonts_installed_list was added)
 
     Uses the Text element's class method to get the fonts reported by tkinter.
 
-    Copyright 2020, 2021, 2022 PySimpleGUI
+    Copyright 2020, 2021, 2022 Interfaces Gui
 '''
 
 fonts = sg.Text.fonts_installed_list()

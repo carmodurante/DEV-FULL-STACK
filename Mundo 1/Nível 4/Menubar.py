@@ -16,7 +16,7 @@ import PySimpleGUI as sg
     The color choice for the menubar background and text use the theme's button colors.
     You can change these color choices by changing the Menubar in the layout.
 
-    Copyright 2021 PySimpleGUI
+    Copyright 2021 Interfaces Gui
 """
 
 sg.MENU_SHORTCUT_CHARACTER = '&'
@@ -26,7 +26,7 @@ def Menubar(menu_def, text_color, background_color, pad=(0, 0)):
     """
     A User Defined element that simulates a Menu element by using ButtonMenu elements
 
-    :param menu_def: A standard PySimpleGUI menu definition
+    :param menu_def: A standard Interfaces Gui menu definition
     :type menu_def: List[List[Tuple[str, List[str]]]
     :param text_color: color for the menubar's text
     :type text_color:
@@ -115,7 +115,7 @@ def main():
         if event == 'About...':
             window.disappear()
             sg.popup('About this program', 'Simulated Menubar to accompany a simulated Titlebar',
-                     'PySimpleGUI Version', sg.version, grab_anywhere=True, keep_on_top=True)
+                     'Interfaces Gui Version', sg.version, grab_anywhere=True, keep_on_top=True)
             window.reappear()
         elif event.startswith('Open'):
             filename = sg.popup_get_file('file to open', no_window=True)
