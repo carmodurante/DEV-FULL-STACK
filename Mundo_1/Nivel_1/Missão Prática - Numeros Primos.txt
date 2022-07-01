@@ -1,0 +1,49 @@
+Algoritmo "Trabalho Pratico 1 - Numeros Primos"
+// Disciplina  : [ Nivel 1 - Desvendando essa caixa preta]
+// Professor   : Andre Przewodowski Filho
+// Descri��o   : imprimir e somar todos os n�meros menores ou
+// iguais a um determinado n�mero primo.
+// Autor(a)    : Carmo Durante Neto
+// Data atual  : 04/06/2022
+
+Var
+   // Se��o de Declara��es das vari�veis
+   divisores, numero, contador, contador2, soma : Inteiro
+
+Inicio
+   // Se��o de Comandos, procedimento, fun��es, operadores, etc...
+
+   escreva("Digite um numero inteiro: ")
+   leia(numero)
+
+   soma <- 0
+   se (numero > 0) entao
+      para contador de 1 ate numero faca
+
+         contador2 <- 1
+         divisores <- 0
+
+         enquanto contador2 <= contador faca
+
+            se (contador % contador2 = 0) entao
+               divisores <- divisores + 1
+            fimse
+
+            contador2 <- contador2 + 1
+            
+         fimenquanto
+
+         se (divisores = 2) entao
+            escreval("O numero ",contador," � primo!")
+            soma <- soma + contador
+         fimse
+
+      fimpara
+
+      escreval("A soma de todos os numeros primos menores ou iguais a:", numero," �: ", soma)
+
+   senao
+      escreval("N�o � um numero inteiro")
+   fimse
+
+fimalgoritmo
