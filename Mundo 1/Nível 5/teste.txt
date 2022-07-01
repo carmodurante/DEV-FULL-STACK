@@ -1,2 +1,2 @@
-Olá, mundo.
-Olá, EAD.
+Ola, mundo.
+Ola, EAD.
