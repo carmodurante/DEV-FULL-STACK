@@ -53,8 +53,8 @@
       <recent name="C:\Users\carmo_neto\PycharmProjects\DEV-FULL-STACK\Mundo 1\Nível 4" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Arquivos">
-    <configuration name="Arquivos" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.Escrever_Arquivos">
+    <configuration name="Escrever_Arquivos" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DEV-FULL-STACK" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -66,7 +66,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mundo 1/Nível 5/Arquivos.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mundo 1/Nível 5/Escrever_Arquivos.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Ler_Arquivos" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DEV-FULL-STACK" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Mundo 1/Nível 5" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\carmo_neto\PycharmProjects\DEV-FULL-STACK\Mundo 1\Nível 5\Ler_Arquivos.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -117,27 +138,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="text_fonts" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="DEV-FULL-STACK" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Mundo 1/Nível 4" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mundo 1/Nível 4/text_fonts.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="tkinter_teste" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DEV-FULL-STACK" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -160,19 +160,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Arquivos" />
+      <item itemvalue="Python.Escrever_Arquivos" />
+      <item itemvalue="Python.Ler_Arquivos" />
       <item itemvalue="Python.tkinter_teste" />
       <item itemvalue="Python.Menubar" />
-      <item itemvalue="Python.text_fonts" />
       <item itemvalue="Python.testee" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Arquivos" />
+        <item itemvalue="Python.Escrever_Arquivos" />
+        <item itemvalue="Python.Ler_Arquivos" />
         <item itemvalue="Python.tkinter_teste" />
         <item itemvalue="Python.Menubar" />
         <item itemvalue="Python.testee" />
-        <item itemvalue="Python.text_fonts" />
       </list>
     </recent_temporary>
   </component>
@@ -199,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656633853481</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ASA">
+      <created>1656634577168</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1656634577168</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

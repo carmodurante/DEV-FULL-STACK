@@ -1,5 +1,13 @@
 arquivo = open("teste.txt")
 
+arquivo_iteravel = open("teste.txt", "r")
+
+index = 0
+
+for linha in arquivo_iteravel:
+    index += 1
+    print(f'linha {index} - {linha}')
+
 # conteudo = arquivo.read()
 conteudo_lista = arquivo.readlines()
 
