@@ -1,9 +1,10 @@
 import matplotlib.pyplot as plt
 from faker import Faker
+from wordcloud import WordCloud
 
 
 def cria_arquivo():
-    with open("teste2.txt", "w") as arquivo:
+    with open("dados_pontuacao.txt", "w") as arquivo:
         linhas = []
         faker = Faker()
         for i in range(100):
@@ -12,30 +13,33 @@ def cria_arquivo():
 
 
 def carrega_dados_arquivo():
-    with open("teste2.txt", "r" ) as arquivo:
+    with open("dados_pontuacao.txt", "r") as arquivo:
         arquivo_lista = arquivo.readlines()
-        linhas_dicionario = {}
+        lista_pontuacao = []
+        linhas_dicionario = {"Nome": [], "Pontuacao": []}
         for linhas in arquivo_lista:
+            linhas = linhas.strip()
             linhas_termos = linhas.split(";")
-            linhas_dicionario['nome'] = linhas_termos[0]
-            linhas_dicionario['pontuacao'] = linhas_termos.strip()
+            linhas_dicionario['Nome'].append(linhas_termos[0])
+            linhas_dicionario['Pontuacao'].append(int(linhas_termos[1]))
+            lista_pontuacao.append(int(linhas_termos[1]))
+    return linhas_dicionario, lista_pontuacao
 
-carrega_dados_arquivo()
-# cria_arquivo()
-# def dados_notas(nota_maxima, num_notas):
-#     dados = []
-#     faker = Faker()
-#
-#     for i in range(num_notas):
-#         dados.append(faker.random_int(1, nota_maxima))
-#
-#     return dados
-#
-#
-# if __name__ == '__main__':
-#     plt.title('Histograma Pontuações', fontsize=20)
-#     plt.xlabel('Pontuações', fontsize=15)
-#     plt.ylabel('Probabilidade', fontsize=15)
-#     plt.tick_params(labelsize=10)
-#     plt.hist(dados_notas(10, 1000), density=True, rwidth=0.88, color='blue', alpha=0.7, edgecolor='black')
-#     plt.show()
+
+def exibir_histograma(lista_pontuacao):
+    plt.title('Histograma Pontuações', fontsize=20)
+    plt.xlabel('Pontuações', fontsize=15)
+    plt.ylabel('Probabilidade', fontsize=15)
+    plt.tick_params(labelsize=10)
+    plt.hist(lista_pontuacao, density=True, rwidth=0.88, color='blue', alpha=0.7, edgecolor='black')
+    plt.show()
+
+
+def exibir_nuvem_palavras():
+    a = 1
+
+
+if __name__ == '__main__':
+    cria_arquivo()  # Cria arquivo
+    lista_arquivo, lista_pontuacao = carrega_dados_arquivo()  # Carrega dados do arquivo
+    exibir_histograma(lista_pontuacao)
