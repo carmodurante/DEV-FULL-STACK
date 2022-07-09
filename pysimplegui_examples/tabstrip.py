@@ -38,8 +38,8 @@ tabgrp = [
 window = sg.Window('My window with tabs', tabgrp)
 
 while True:
-    # Read  values entered by user
+    # Read values entered by user
     event, values = window.read()
     print(event)
-    if event == sg.WIN_CLOSED:  # always,  always give a way out!
+    if event == sg.WIN_CLOSED:  # always, always give a way out!
         break
