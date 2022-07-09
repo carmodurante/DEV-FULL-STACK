@@ -60,6 +60,7 @@ def executa_funcoes_em_comum():
     lista_arquivo, lista_pontuacao = carrega_dados_arquivo()  # Carrega dados do arquivo
     return lista_pontuacao
 
+
 # HISTOGRAMA
 if __name__ == '__main__':
     exibir_histogram(executa_funcoes_em_comum())  # Exibe um histograma da lista e sua probabilidade
