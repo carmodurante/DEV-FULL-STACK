@@ -6,7 +6,7 @@ psg.theme('SandyBeach')
 layout = [[psg.Text('Choose Boarding place', size=(20, 1), font='Lucida', justification='left')],
           [psg.Combo(['New York', 'Chicago', 'Washington', 'Colorado', 'Ohio', 'San Jose', 'Fresno', 'San Fransisco'],
                      default_value='Utah', key='board')],
-          [psg.Text('Choose Destination ', size=(30, 1), font='Lucida', justification='left')],
+          [psg.Text('Choose Destination ', size=(30, 1), font='Ubuntu', justification='left')],
           [psg.Combo(['New York', 'Chicago', 'Washington', 'Colorado', 'Ohio', 'San Jose', 'Fresno', 'San Fransisco'],
                      key='dest')],
           [psg.Text('Choose additional Facilities', size=(30, 1), font='Lucida', justification='left')],

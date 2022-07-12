@@ -9,11 +9,16 @@ buttons_cadastro_ferramentas = [[sg.Button('Buscar',    key='BuscarFerramenta'),
                                  sg.Button('Modificar', key='ModificarFerramenta'),
                                  sg.Button('Eliminar',  key='EliminarFerramenta')]]
 
-layout_cad_ferramentas = [[sg.Text('Name', size=(10, 1)), sg.Input('', key='eName')],
-                         [sg.Text('Date of Birth', size=(10, 1)), sg.Input('', key='eDob')],
-                         [sg.Text('Phone No', size=(10, 1)), sg.Input('', key='ePhone')],
-                         [sg.Text('Email ID', size=(10, 1)), sg.Input('', key='eEmail')],
-                         [sg.Frame('Opções de Cadastro de Ferramentas', layout=buttons_cadastro_ferramentas,
+layout_cad_ferramentas = [[sg.Text('Descrição', size=(18, 1)), sg.Input('', key='fDescricao')],
+                          [sg.Text('Nome do Fabricante', size=(18, 1)), sg.Input('', key='fFabricante')],
+                          [sg.Text('Voltagem de Uso', size=(18, 1)), sg.Input('', key='fVoltagem')],
+                          [sg.Text('Código no Fabricante', size=(18, 1)), sg.Input('', key='eEmail')],
+                          [sg.Text('Tamanho', size=(18, 1)), sg.Input('', key='fTamanho')], # Listbox
+                          [sg.Text('Unidade de Medida', size=(18, 1)), sg.Input('', key='fUnidade')], # Listbox
+                          [sg.Text('Tipo da Ferramenta', size=(18, 1)), sg.Input('', key='fTipo')], # Listbox
+                          [sg.Text('Material da Ferramenta', size=(18, 1)), sg.Input('', key='fMaterial')], # Listbox
+                          [sg.Text('Tempo Max. de Reserva', size=(18, 1)), sg.Input('', key='fTempoReserva')],
+                          [sg.Frame('Opções de Cadastro de Ferramentas', layout=buttons_cadastro_ferramentas,
                                    element_justification='center')]]
 
 # Define Layout Cadastro Tecnicos
