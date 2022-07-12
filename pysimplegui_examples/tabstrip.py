@@ -17,7 +17,7 @@ layout_cad_ferramentas = [[sg.Text('Descrição', size=(18, 1)), sg.Input('', ke
                           [sg.Text('Unidade de Medida', size=(18, 1)), sg.Input('', key='fUnidade')], # Listbox
                           [sg.Text('Tipo da Ferramenta', size=(18, 1)), sg.Input('', key='fTipo')], # Listbox
                           [sg.Text('Material da Ferramenta', size=(18, 1)), sg.Input('', key='fMaterial')], # Listbox
-                          [sg.Text('Tempo Max. de Reserva', size=(18, 1)), sg.Input('', key='fTempoReserva')],
+                          [sg.Text('Tempo Max. de Reserva', size=(18, 1)), sg.Input('', key='fTempoReserva', size=5), sg.Text('(Horas)', size=(7, 1))],
                           [sg.Frame('Opções de Cadastro de Ferramentas', layout=buttons_cadastro_ferramentas,
                                    element_justification='center')]]
 
