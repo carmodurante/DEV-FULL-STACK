@@ -6,9 +6,9 @@ def layout_cadastro(lista_cadastrado_ferramentas, lista_cadastrado_tecnicos, lis
     header_cadastro_ferramentas = ['ID Ferramenta', 'Descrição', 'Fabricante', 'Voltagem', 'Cód. Fabricante',
                                    'Tamanho', 'Unidade Medida', 'Material', 'Tempo Max Reserva', 'Reservado?']
 
-    buttons_cadastro_ferramentas = [[sg.Button('Cadastrar', key='CadastrarFerramenta', pad=(15, 7)),
-                                     sg.Button('Modificar', key='ModificarFerramenta', pad=(15, 7)),
-                                     sg.Button('Eliminar', key='EliminarFerramenta', pad=(15, 7))]]
+    buttons_cadastro_ferramentas = [[sg.Button('Cadastrar', key='CadastrarFerramenta', pad=(15, 7), expand_x=True),
+                                     sg.Button('Modificar', key='ModificarFerramenta', pad=(15, 7), expand_x=True),
+                                     sg.Button('Eliminar', key='EliminarFerramenta', pad=(15, 7), expand_x=True)]]
 
     layout_cad_ferramentas = [[sg.Text('Descrição', size=(18, 1)), sg.Input('', key='fDescricao'),
                                sg.Text('Nome do Fabricante', size=(18, 1)), sg.Input('', key='fFabricante')],
@@ -40,9 +40,9 @@ def layout_cadastro(lista_cadastrado_ferramentas, lista_cadastrado_tecnicos, lis
     ############ Define Layout Cadastro Tecnicos ############
     header_cadastro_tecnicos = ['CPF', 'Nome Técnico', 'Telefone/Celular', 'Turno/Período', 'Nome da Equipe']
 
-    buttons_cadastro_tecnico = [[sg.Button('Cadastrar', key='CadastrarTecnico'),
-                                 sg.Button('Modificar', key='ModificarTecnico'),
-                                 sg.Button('Eliminar', key='EliminarTecnico')]]
+    buttons_cadastro_tecnico = [[sg.Button('Cadastrar', key='CadastrarTecnico', pad=(15, 7), expand_x=True),
+                                 sg.Button('Modificar', key='ModificarTecnico', pad=(15, 7), expand_x=True),
+                                 sg.Button('Eliminar', key='EliminarTecnico', pad=(15, 7), expand_x=True)]]
 
     layout_cad_tecnico = [[sg.Text('CPF', size=(18, 1)), sg.Input('', key='tCPF')],
                           [sg.Text('Nome', size=(18, 1)), sg.Input('', key='tNome')],
