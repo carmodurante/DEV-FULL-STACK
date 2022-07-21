@@ -2,7 +2,6 @@ import PySimpleGUI as sg
 
 
 def layout_cadastro(lista_cadastrado_ferramentas, lista_cadastrado_tecnicos, lista_cadastrado_reservas):
-
     ############ Define Layout Cadastro Ferramentas ############
     header_cadastro_ferramentas = ['ID Ferramenta', 'Descrição', 'Fabricante', 'Voltagem', 'Cód. Fabricante',
                                    'Tamanho', 'Unidade Medida', 'Material', 'Tempo Max Reserva', 'Reservado?']
@@ -65,7 +64,6 @@ def layout_cadastro(lista_cadastrado_ferramentas, lista_cadastrado_tecnicos, lis
                                     enable_click_events=True)]]
 
     ############ Define Layout Cadastro Reservas ############
-
     layout_cad_reserva = [[sg.Text('Last Job', size=(10, 1)), sg.Input('', key='eLastJ')],
                           [sg.Text('From Date', size=(10, 1)), sg.Input('', key='eJFdt')],
                           [sg.Text('To Date', size=(10, 1)), sg.Input('', key='eJTdt')],
@@ -80,3 +78,61 @@ def layout_cadastro(lista_cadastrado_ferramentas, lista_cadastrado_tecnicos, lis
     ]], tab_location=sg.TAB_LOCATION_TOP_LEFT, border_width=7, font='_ 12')]]
 
     return tabgrp_cadastro
+
+
+def layout_consulta():
+    ############ Define Layout Consulta Ferramentas ############
+    layout_con_ferramentas = [[sg.Text('Name', size=(10, 1)), sg.Input('', key='eName')],
+                              [sg.Text('Date of Birth', size=(10, 1)), sg.Input('', key='eDob')],
+                              [sg.Text('Phone No', size=(10, 1)), sg.Input('', key='ePhone')],
+                              [sg.Text('Email ID', size=(10, 1)), sg.Input('', key='eEmail')],
+                              [sg.Button('Save Personal Details')]]
+
+    ############ Define Layout Consulta Tecnicos ############
+    layout_con_tecnico = [[sg.Text('Highest Qualfication', size=(15, 1)), sg.Input('', key='eQual')],
+                          [sg.Text('Year of Qualifying', size=(15, 1)), sg.Input('', key='eYoq')],
+                          [sg.Text('Grade', size=(15, 1)), sg.Input('', key='eGrade')],
+                          [sg.Text('University/College', size=(15, 1)), sg.Input('', key='eQUniv')],
+                          [sg.Button('Save Education Details')]]
+
+    ############ Define Layout Consulta Reservas ############
+    layout_con_reserva = [[sg.Text('Last Job', size=(10, 1)), sg.Input('', key='eLastJ')],
+                          [sg.Text('From Date', size=(10, 1)), sg.Input('', key='eJFdt')],
+                          [sg.Text('To Date', size=(10, 1)), sg.Input('', key='eJTdt')],
+                          [sg.Text('Company Name', size=(10, 1)), sg.Input('', key='eLJcmpy')],
+                          [sg.Button('Save Experience Details')]]
+
+    # Define o TabGroup Consulta
+    tabgrp_consulta = [[sg.TabGroup([[
+        sg.Tab('Consulta de Ferramentas', layout_con_ferramentas, border_width=5, element_justification='left'),
+        sg.Tab('Consulta de Técnicos     ', layout_con_tecnico, border_width=5, element_justification='left'),
+        sg.Tab('Consulta de Reservas     ', layout_con_reserva, border_width=5, element_justification='left')
+    ]], tab_location=sg.TAB_LOCATION_TOP_LEFT, border_width=7, font='_ 12')]]
+
+    return tabgrp_consulta
+
+
+def layout_principal(lista_cadastrado_ferramentas, lista_cadastrado_tecnicos, lista_cadastrado_reservas):
+    ########## Definição Tela Principal ##########
+    tabgroup_menu = [
+        # Dados Cabeçalho
+        [sg.T('Central de Ferramentaria AudioVisual', font='_ 16', justification='c', expand_x=True,
+              border_width=10, background_color='white', text_color='black')],
+
+        # Dados TabGroup Principal
+        [sg.TabGroup([[
+            # TabGroup de Cadastros
+            sg.Tab('Cadastros', layout_cadastro(lista_cadastrado_ferramentas,
+                                                lista_cadastrado_tecnicos,
+                                                lista_cadastrado_reservas),
+                   border_width=5, element_justification='left'),
+
+            # TabGroup de Consultas
+            sg.Tab('Consultas', layout_consulta(), border_width=5, element_justification='left')]],
+            tab_location=sg.TAB_LOCATION_TOP, border_width=12, font='_ 12')],
+
+        # Dados Footer
+        [sg.Text('Usuário Logado:', size=(12, 1)), sg.Text('CarmoDurante', size=(18, 1), text_color='green'),
+         sg.Text('Admin: ', size=(5, 1)), sg.Text('False', size=(18, 1), text_color='red')]]
+
+    return tabgroup_menu
