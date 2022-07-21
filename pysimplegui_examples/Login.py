@@ -1,18 +1,14 @@
 import PySimpleGUI as sg
 
-username = ''
-password = ''
-
-
-# PROGRESS BAR
+## Barra de Progresso ##
 def progress_bar():
     sg.theme('Black')
     layout = [[sg.Text('Criando sua conta...')],
-              [sg.ProgressBar(1000, orientation='h', size=(20, 20), key='progbar')],
+              [sg.ProgressBar(1800, orientation='h', size=(30, 30), key='progbar')],
               [sg.Cancel()]]
 
-    window = sg.Window('Trabalhando...', layout)
-    for i in range(1000):
+    window = sg.Window('Cadastrando...', layout)
+    for i in range(1800):
         event, values = window.read(timeout=1)
         if event == 'Cancel' or event == sg.WIN_CLOSED:
             break
@@ -20,6 +16,7 @@ def progress_bar():
     window.close()
 
 
+## Criar Conta ##
 def create_account():
     sg.theme('Black')
     layout = [[sg.T("Registrar Usuário", size=(18, 1), font=40, justification='c', expand_x=True, border_width=10,
@@ -40,6 +37,7 @@ def create_account():
         if event == 'CancelCadastro' or event == sg.WIN_CLOSED:
             break
         else:
+            print(event)
             if event == "SubmitCadastro":
                 password = values['PasswordCadastro']
                 username = values['UsernameCadastro']
@@ -48,6 +46,7 @@ def create_account():
     window.close()
 
 
+## Logar ##
 def login():
     global username, password
     sg.theme("Black")
@@ -68,7 +67,6 @@ def login():
         else:
             if event == "SubmitLogin":
                 if values['UsernameLogin'] == username and values['PasswordLogin'] == password:
-
                     break
                 elif values['UsernameLogin'] != username or values['PasswordLogin'] != password:
                     sg.popup("Login inválido, tente novamente!")
