@@ -16,7 +16,7 @@ def progress_bar():
     window.close()
 
 
-## Salvar Usuário em arquivos
+## Salvar Usuário em arquivo
 def salvar_novo_usuario(username, password, email, admin):
     with open("usuarios.txt", "a") as arquivo_usuarios:
         usuario = [f'\n{username}', f';{password}', f';{email}', f';{admin}']
