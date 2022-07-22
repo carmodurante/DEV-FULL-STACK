@@ -51,8 +51,8 @@ def create_account():
                sg.InputText(key='PasswordCadastro', font=16, password_char='*')],
               [sg.Text('Usuário Administrador?', size=(19, 1), font=16),
                sg.Checkbox('', key='AdminCadastro', default=True, font=16, size=(15, 1))],
-              [sg.Button("Cadastrar", pad=(35, 20), key='SubmitCadastro', auto_size_button=True, expand_x=True),
-               sg.Button("Cancelar", pad=(35, 20), key='CancelCadastro', auto_size_button=True, expand_x=True)]]
+              [sg.Button("Cadastrar", pad=(35, 20), key='SubmitCadastro', expand_x=True),
+               sg.Button("Cancelar", pad=(35, 20), key='CancelCadastro', expand_x=True)]]
 
     window = sg.Window("Cadastrar novo usuário", layout)
 
@@ -63,16 +63,20 @@ def create_account():
         else:
             print(event)
             if event == "SubmitCadastro":
-                password = values['PasswordCadastro']
-                username = values['UsernameCadastro']
-                admin = values['AdminCadastro']
-                email = values['EmailCadastro']
-                if password.strip() != "" and username.strip() != "":
-                    salvar_novo_usuario(username, password, email, admin)
-                    progress_bar()
-                    break
-                else:
-                    sg.popup("Usuario e Senha são Obrigatórios", title='Error', font=8)
+                try:
+                    password = values['PasswordCadastro']
+                    username = values['UsernameCadastro']
+                    admin = values['AdminCadastro']
+                    email = values['EmailCadastro']
+                    if password.strip() != "" and username.strip() != "":
+                        salvar_novo_usuario(username, password, email, admin)
+                        progress_bar()
+                        break
+                    else:
+                        sg.popup("Usuario e Senha são Obrigatórios", title='Error', font=8)
+
+                except:
+                    sg.popup("Operação Cancelada", title='Error', font=8)
     window.close()
 
 
@@ -111,7 +115,11 @@ def login():
             sg.popup("Preencha todos os campos!", title='Error', font=8)
 
     window.close()
-    return logado
+    return logado, admin
+
 
 if __name__ == '__main__':
-    login()
+    try:
+        logado, admin = login()
+    except:
+        print('Erro')

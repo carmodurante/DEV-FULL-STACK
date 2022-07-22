@@ -11,18 +11,25 @@ def layout_cadastro(lista_cadastrado_ferramentas, lista_cadastrado_tecnicos, lis
                                      sg.Button('Eliminar', key='EliminarFerramenta', pad=(15, 7), expand_x=True)]]
 
     layout_cad_ferramentas = [[sg.Text('Descrição', size=(18, 1)), sg.Input('', key='fDescricao'),
+                               sg.VerticalSeparator(pad=((18, 15), (1, 1))),
                                sg.Text('Nome do Fabricante', size=(18, 1)), sg.Input('', key='fFabricante')],
                               [sg.Text('Voltagem de Uso', size=(18, 1)),
-                               sg.Combo(['220V', '110V', 'N/D'], default_value='110V', key='fVoltagem', size=43),
-                               sg.Text('Código no Fabricante', size=(18, 1)), sg.Input('', key='eEmail')],
-                              [sg.Text('Tamanho', size=(18, 1)), sg.Input('', key='fTamanho'),  # Listbox
-                               sg.Text('Unidade de Medida', size=(18, 1)), sg.Input('', key='fUnidade')],  # Listbox
-                              [sg.Text('Tipo da Ferramenta', size=(18, 1)), sg.Input('', key='fTipo'),  # Listbox
+                               sg.Combo(['220V', '110V', 'N/D'], default_value='110V', key='fVoltagem', size=10),
+                               sg.Text('(Volts)', size=(7, 1)),
+                               sg.VerticalSeparator(pad=((180,15), (1,1)) ),
+                               sg.Text('Código no Fabricante', size=(18, 1)), sg.Input('', key='fFabricante', size=25)],
+                              [sg.Text('Tamanho', size=(18, 1)), sg.Input('', key='fTamanho', size=20),  # Listbox
+                               sg.VerticalSeparator(pad=((193, 15), (1, 1))),
+                               sg.Text('Unidade de Medida', size=(18, 1)), sg.Input('', key='fUnidade', size=25)],  # Listbox
+                              [sg.Text('Tipo da Ferramenta', size=(18, 1)), sg.Input('', key='fTipo', size=35),  # Listbox
+                               sg.VerticalSeparator(pad=((88, 15), (1, 1))),
                                sg.Text('Material da Ferramenta', size=(18, 1)), sg.Input('', key='fMaterial')],
                               # Listbox
                               [sg.Text('Tempo Max. de Reserva', size=(18, 1)),
                                sg.Input('', key='fTempoReserva', size=6, ),
-                               sg.Text('(Horas)', size=(7, 1))],
+                               sg.Text('(Horas)', size=(7, 1)),
+                               sg.VerticalSeparator(pad=((221, 15), (1, 1)))],
+
                               [sg.Frame('Opções de Cadastro de Ferramentas', layout=buttons_cadastro_ferramentas,
                                         element_justification='left', expand_x=True, pad=(10, 10))],
                               [sg.Table(values=lista_cadastrado_ferramentas,
@@ -44,11 +51,11 @@ def layout_cadastro(lista_cadastrado_ferramentas, lista_cadastrado_tecnicos, lis
                                  sg.Button('Modificar', key='ModificarTecnico', pad=(15, 7), expand_x=True),
                                  sg.Button('Eliminar', key='EliminarTecnico', pad=(15, 7), expand_x=True)]]
 
-    layout_cad_tecnico = [[sg.Text('CPF', size=(18, 1)), sg.Input('', key='tCPF')],
+    layout_cad_tecnico = [[sg.Text('CPF', size=(18, 1)), sg.Push(), sg.Input('', key='tCPF', size=15)],
                           [sg.Text('Nome', size=(18, 1)), sg.Input('', key='tNome')],
-                          [sg.Text('Telefone', size=(18, 1)), sg.Input('', key='tTelefone')],
+                          [sg.Text('Celular/Rádio', size=(18, 1)), sg.Input('', key='tTelefone', size=11)],
                           [sg.Text('Turno', size=(18, 1)), sg.Combo(['Manhã', 'Tarde', 'Noite'],
-                                                                    default_value='Manhã', key='fTurno', size=43)],
+                                                                    default_value='Manhã', key='fTurno', size=9)],
                           [sg.Text('Nome da Equipe', size=(18, 1)), sg.Input('', key='tEquipe')],
                           [sg.Frame('Opções de Cadastro de Técnicos', layout=buttons_cadastro_tecnico,
                                     element_justification='left', expand_x=True, pad=(10, 10))],
@@ -133,6 +140,7 @@ def layout_principal(lista_cadastrado_ferramentas, lista_cadastrado_tecnicos, li
 
         # Dados Footer
         [sg.Text('Usuário Logado:', size=(12, 1)), sg.Text('CarmoDurante', size=(18, 1), text_color='green'),
-         sg.Text('Admin: ', size=(5, 1)), sg.Text('False', size=(18, 1), text_color='red')]]
+         sg.Text('Admin: ', size=(5, 1)), sg.Text('False', size=(18, 1), text_color='red'),
+         sg.Push(), sg.Text('@DevTeam_05', size=(15, 1), text_color='purple')]]
 
     return tabgroup_menu
