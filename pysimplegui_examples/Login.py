@@ -115,11 +115,10 @@ def login():
             sg.popup("Preencha todos os campos!", title='Error', font=8)
 
     window.close()
-    return logado, admin
-
+    return logado, admin, window
 
 if __name__ == '__main__':
     try:
-        logado, admin = login()
+        logado, admin, window = login()
     except:
         print('Erro')
