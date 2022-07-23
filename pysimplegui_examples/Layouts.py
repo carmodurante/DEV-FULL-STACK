@@ -51,7 +51,7 @@ def layout_cadastro(lista_cadastrado_ferramentas, lista_cadastrado_tecnicos, lis
                                  sg.Button('Modificar', key='ModificarTecnico', pad=(15, 7), expand_x=True),
                                  sg.Button('Eliminar', key='EliminarTecnico', pad=(15, 7), expand_x=True)]]
 
-    layout_cad_tecnico = [[sg.Text('CPF', size=(18, 1)), sg.Push(), sg.Input('', key='tCPF', size=15)],
+    layout_cad_tecnico = [[sg.Text('CPF', size=(18, 1)), sg.Input('', key='tCPF', size=15)],
                           [sg.Text('Nome', size=(18, 1)), sg.Input('', key='tNome')],
                           [sg.Text('Celular/Rádio', size=(18, 1)), sg.Input('', key='tTelefone', size=11)],
                           [sg.Text('Turno', size=(18, 1)), sg.Combo(['Manhã', 'Tarde', 'Noite'],
