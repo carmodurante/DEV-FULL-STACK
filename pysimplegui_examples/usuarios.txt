@@ -1,5 +1,1 @@
 CarmoDurante;1234;carmo.durante@gmail.com;True
-;;;True
-1;2;;False
-4;6;1;True
-212121;QWWQWE;qqqq;True

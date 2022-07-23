@@ -1,6 +1,6 @@
 import PySimpleGUI as sg
 
-## Barra de Progresso ##
+## Barra de Progresso
 def progress_bar():
     sg.theme('Black')
     layout = [[sg.Text('Criando sua conta...')],
@@ -40,10 +40,10 @@ def carregar_usuarios(username, password):
     return validado
 
 
-## Criar Conta ##
+## Criar Conta
 def create_account():
     sg.theme('Black')
-    layout = [[sg.T("Registrar Usuário", size=(18, 1), font=40, justification='c', expand_x=True, border_width=10,
+    layout = [[sg.T("Cadastrar Usuário", size=(18, 1), font=40, justification='c', expand_x=True, border_width=10,
                     background_color='White', text_color='Black')],
               [sg.Text("E-mail", size=(19, 1), font=16), sg.InputText(key='EmailCadastro', font=16)],
               [sg.Text("Criar Usuário", size=(19, 1), font=16), sg.InputText(key='UsernameCadastro', font=16)],
@@ -80,7 +80,7 @@ def create_account():
     window.close()
 
 
-## Logar ##
+## Logar
 def login():
     sg.theme("Black")
 
