@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>
+        CSS - Layout em Colunas Bootstrap.
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <style type="text/css">
+        .header {
+            background-color: yellow;
+        }
+
+        .main {
+            height: 500px;
+        }
+
+        .coluna_1 {
+            background-color: pink;
+        }
+
+        .coluna_2 {
+            background-color: gray;
+        }
+
+        .coluna_3 {
+            background-color: pink;
+        }
+
+        .footer {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <header class="col-12 text-center header">
+                CABEÇALHO
+            </header>
+        </div>
+
+        <div class="row main">
+            <div class="col-2 text-center coluna_1">
+                COLUNA 1
+            </div>
+            <div class="col-8 text-center coluna_2">
+                COLUNA 2
+            </div>
+            <div class="col-2 text-center coluna_3">
+                COLUNA 3
+            </div>
+        </div>
+
+        <div class="row">
+            <footer class="col-12 text-center footer">
+                Rodapé
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

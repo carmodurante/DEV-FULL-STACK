@@ -1,0 +1,21 @@
+
+
+input {
+    background-color: red;
+    color:white;
+}
+
+label {
+    background-color: blue;
+    width: 500px;
+    height: 200px;
+    color: white;
+}
+
+@font-face {
+    font-family: 'Awesome';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Awesome Font')
+        url('fontawesome-webfont.woff2') format ('woff2');
+}

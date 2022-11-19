@@ -5,8 +5,11 @@
 <head>
 
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="estilos.css" rel="stylesheet" />
     <title>
-        Titulo da Pagina
+        DESAFIO
     </title>
 
 </head>
@@ -17,8 +20,43 @@
         <fieldset>
             <legend> Dados Gerais </legend>
             <label for="nome">Nome:</label>
-            <input type="text" minlength="3" id="nome" required />
-            <
+            <input type="text" minlength="3" id="nome" name="nome" required />
+            </br>
+            </br>
+            <label for="data_nascimento">Data Nascimento:</label>
+            <input type="date" id="data_nascimento" name="data_nascimento" />
+            </br>
+            </br>
+            <label for="cpf">CPF:</label>
+            <input type="text" maxlength="11" minlength="11" id="cpf" name="cpf" />
+            </br>
+            </br>
+            <label for="tel">Tel. Celular</label>
+            <input type="tel" maxlength="13" id="tel" name="tel" placeholder="16-99218-0889"
+                pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" required />
+            </br>
+            </br>
+        </fieldset>
+
+        <fieldset>
+            <legend> Fale Conosco </legend>
+            <label for="tipo_msg">Tipo de Mensagem:</label>
+            <input type="radio" name="tipo_msg" id="sugestao" value="Sugestão" />
+            <label for="sugestao">Sugestão</label>
+            <input type="radio" name="tipo_msg" id="critica" value="Crítica" />
+            <label for="critica">Crítica</label>
+            <input type="radio" name="tipo_msg" id="elogio" value="Elogio" />
+            <label for="elogio">Elogio</label>
+            </br>
+            </br>
+            <label for="msg">Mensagem:</label>
+            </br>
+            <textarea id="msg" name="msg"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <button type="submit">Enviar sua Mensagem</button>
+            <button type="reset">Limpar o Formulário</button>
         </fieldset>
     </form>
 
