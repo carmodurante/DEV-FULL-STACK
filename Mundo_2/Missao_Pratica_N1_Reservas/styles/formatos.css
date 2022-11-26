@@ -71,8 +71,7 @@ p {
 }
 
 div.texto {
-    height: 700px;
-    width: 700px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;

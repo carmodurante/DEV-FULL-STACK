@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link href="styles/formatos.css" rel="stylesheet" />
@@ -41,7 +41,7 @@
                             <a class="nav-link" href="receitas.html#">Receitas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="cadastro.html#">Cadastro</a>
+                            <a class="nav-link active" href="cadastro.html#">Cadastro</a>
                         </li>
                     </ul>
                 </div>
@@ -75,7 +75,8 @@
                 <div class="row mb-3">
                     <label for="inputCEP" class="col-sm-1 col-form-label col-form-label-lg">CEP:</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control form-control-lg" id="inputCEP" placeholder="00000-000" required pattern="[0-9]{5}-[0-9]{3}">
+                        <input type="text" class="form-control form-control-lg" id="inputCEP" placeholder="00000-000"
+                            required pattern="[0-9]{5}-[0-9]{3}">
                     </div>
                 </div>
 
@@ -120,13 +121,6 @@
             <p>©Jurema 2022</p>
         </div>
     </footer>
-
-    <script>
-        $('.nav-link').click(function () {
-            $('.nav-link').removeClass('active');
-            $(this).addClass('active');
-        })
-    </script>
 
 </body>
 
