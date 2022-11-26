@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>
+        Receitas - Tia Jurema
+    </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="formatos.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+    <header class="col-md-auto header">
+
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="home.html#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="receitas.html#">Receitas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cadastro.html#">Cadastro</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main class="col-form-label main">
+        <div class="container-fluid">
+
+            <form>
+
+                <h1 class="modal-title">Efetue o seu Cadastro</h1>
+
+                <div class="row mb-3">
+                    <label for="inputNome" class="col-sm-1 col-form-label col-form-label-lg">Nome:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control form-control-lg" id="inputNome" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="inputEmail" class="col-sm-1 col-form-label col-form-label-lg">Email:</label>
+                    <div class="col-sm-9">
+                        <input type="email" class="form-control form-control-lg" id="inputEmail" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="inputCEP" class="col-sm-1 col-form-label col-form-label-lg">CEP:</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control form-control-lg" id="inputCEP" placeholder="00000-000" required pattern="[0-9]{5}-[0-9]{3}">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="inputRua" class="col-sm-1 col-form-label col-form-label-lg">Rua:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control form-control-lg" id="inputRua" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="inputNumero" class="col-sm-1 col-form-label col-form-label-lg">Rua:</label>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control form-control-lg" id="inputNumero" required>
+                    </div>
+                    <label for="inputComp" class="col-sm-2 col-form-label col-form-label-lg">Complemento:</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control form-control-lg" id="inputComp" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="inputCidade" class="col-sm-1 col-form-label col-form-label-lg">Cidade:</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control form-control-lg" id="inputCidade" required>
+                    </div>
+                    <label for="inputUF" class="col-sm-1 col-form-label col-form-label-lg">UF:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control form-control-lg" id="inputUF" required>
+                    </div>
+                    <div class="col-sm-1">
+                        <button type="submit" class="btn btn-dark text-white btn-lg">Cadastrar</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <footer class="fixed-bottom bg-dark">
+        <div class="text-center">
+            <p>©Jurema 2022</p>
+        </div>
+    </footer>
+
+    <script>
+        $('.nav-link').click(function () {
+            $('.nav-link').removeClass('active');
+            $(this).addClass('active');
+        })
+    </script>
+
+</body>
+
+</html>
