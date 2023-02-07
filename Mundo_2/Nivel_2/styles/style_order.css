@@ -1,6 +1,43 @@
-body{
-    background-color: rgb(131, 131, 129);
-}
 button{
     background-color: rgb(116, 0, 151);
 }
+
+body {
+    padding-top: 70px;
+    background-color: rgb(31, 28, 28);
+    position: relative;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    min-height: 100vh;
+    overflow-y: auto; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    padding-right: 50px;
+    padding-bottom: 20px;
+
+  }
+
+
+  div {
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+  }
+
+  h1 {
+    color: whitesmoke;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+  }
+  
+  li {
+    color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: larger;
+  }

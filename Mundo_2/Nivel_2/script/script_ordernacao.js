@@ -56,47 +56,4 @@ const particionamento = (arr, start, end) => {
     return i + 1;
 };
 
-function add() {
-    const input = document.getElementById("valor");
-    const lista = document.getElementById("valores");
-    const node = document.createElement("li");
-    const textNode = document.createTextNode(input.value);
-    node.appendChild(textNode);
-    lista.appendChild(node);
 
-}
-
-function ordenar() {
-    const lista = document.getElementById("valores");
-    const tipoOrdenacao = document.getElementById("tipoOrdenacao");
-    const itens = Array.from(lista.children);
-    const valores = itens.map(item => parseInt(item.innerHTML));
-    let algoritmoOrdenacao;
-    switch (tipoOrdenacao.selectedIndex) {
-        case 0:
-            algoritmoOrdenacao = bubbleSort;
-            break;
-        case 1:
-            algoritmoOrdenacao = selectionSort;
-            break;
-        case 2:
-            algoritmoOrdenacao = quickSort;
-            break;
-        default:
-            algoritmoOrdenacao = bubbleSort;
-    }
-    algoritmoOrdenacao(valores);
-    lista.innerHTML = valores
-        .map(valor => `<li>${valor}</li>`)
-        .reduce((acumulador, item) => acumulador + item, "");
-}
-
-function misturar() {
-    const lista = document.getElementById("valores");
-    const itens = Array.from(lista.children);
-    const valores = itens.map(item => parseInt(item.innerHTML));
-    shuffle(valores);
-    lista.innerHTML = valores
-        .map(valor => `<li>${valor}</li>`)
-        .reduce((acumulador, item) => acumulador + item, "");
-} 
